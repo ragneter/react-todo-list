@@ -42,17 +42,19 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="App flex flex-col items-center mt-16">
                 <div>
-                    Add an Item...
+                    <h1 className="text-4xl text-center">
+                        Add an Item...
+                    </h1>
                     <br />
-                    <input
+                    <input className="text-2xl"
                         type="text"
                         placeholder="Type item here..."
                         value={this.state.newItem}
                         onChange={e => this.updateInput("newItem", e.target.value)}
                     />
-                    <button
+                    <button className="bg-black text-white p-2.5 w-fit mt-9 text-xl"
                         onClick={() => this.addItem()}
                     >
                         Add
@@ -61,12 +63,12 @@ class App extends Component {
                     <ul>
                         {this.state.list.map(item => {
                             return (
-                                <li key={item.id}>
+                                <li className="text-2xl" key={item.id}>
                                     {item.value}
-                                    <button
+                                    <button className="bg-black text-white p-1.5 w-fit mt-5 text-xl"
                                         onClick={() => this.deleteItem(item.id)}
                                     >
-                                         Delete
+                                        Delete
                                     </button>
                                 </li>
                             )
